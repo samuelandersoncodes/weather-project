@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/b6d3775a16.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./weather.css">
   <script src="./weather.js"></script>
   <title>Document</title>
@@ -14,7 +15,8 @@
   <div class="main">
     <div class="upper-section">
       <form>
-        <input type="search" placeholder="type in your city" autocomplete="off" autofocus="on" id="city-input">
+        <input type="search" placeholder="type in your city" autocomplete="off" autofocus="on" id="city-input"
+          class="city-input">
         <input type="submit" value="search" id="search-city">
       </form>
     </div>
@@ -25,8 +27,8 @@
       Cloudy
     </p>
 
-    <div class="row-6">
-      <div class="col-6">
+    <div class="row weather-elements">
+      <div class="col">
         <i class="fa-solid fa-cloud-showers-heavy"></i>
         <p>
           14
@@ -47,6 +49,17 @@
             Wind: 6km/hr
           </li>
         </ul>
+      </div>
+      <div class="mother-button" role="group" aria-label="Basic example">
+        <button type="button" class="first-button">
+          Precipitation
+        </button>
+        <button type="button" class="second-button">
+          Humidity
+        </button>
+        <button type="button" class="third-button">
+          Wind
+        </button>
       </div>
 
 </body>

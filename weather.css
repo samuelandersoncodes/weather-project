@@ -1,0 +1,77 @@
+.main {
+  display: block;
+  margin: 2 auto;
+  border: solid green 2px;
+  border-radius: 14px;
+  max-width: 600px;
+  padding: 20px 30px;
+  box-shadow: 6px solid;
+}
+
+h1 {
+  display: block;
+  color: rgb(135, 135, 135);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 44px;
+  font-weight: 100;
+  text-align: left;
+  line-height: 28.8px;
+}
+
+p {
+  color: rgb(135, 135, 135);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.upper-section {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  margin-right: 3px;
+  margin-left: 3px;
+
+}
+
+.upper-section .city-input {
+  border-radius: 4px;
+  padding-right: 180px;
+  box-shadow: none;
+}
+
+.fa-cloud-showers-heavy {
+  color: rgba(169, 169, 169, 0.411);
+  font-size: 70px;
+}
+
+.weather-elements {
+  position: relative;
+  top: -40px;
+  right: -190px;
+
+}
+
+.weather-elements ul li {
+  list-style: none;
+}
+
+.mother-button {
+
+  position: relative;
+  top: -2px;
+  right: -25px;
+  margin: 0 auto;
+}
+
+.mother-button,
+button {
+  display: inline-flex;
+  margin: 0 auto;
+  padding: 0 auto;
+  color: rgba(135, 135, 135, 0.76);
+  font-weight: bold;
+}
+
+button:hover {
+  color: rgba(127, 80, 172, 0.767);
+}
