@@ -18,12 +18,24 @@ h1 {
   line-height: 28.8px;
 }
 
+h3{
+  position: relative;
+  top: -60px;
+  right: -345px;
+  margin-bottom: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  color: rgba(128, 128, 128, 0.486);
+  font-size: 45px;
+}
+
 p {
   color: rgb(135, 135, 135);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
-.date{
+
+.date {
   font-size: 30px;
 }
 
