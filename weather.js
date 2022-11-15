@@ -60,3 +60,12 @@ function formatTime(date) {
 let time = new Date();
 let timeElement = document.querySelector("#time")
 timeElement.innerHTML = formatTime(date);
+
+function search(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city")
+  let cityInput = document.querySelector("#city-input");
+  city.innerHTML = cityInput.value;
+}
+let cityForm = document.querySelector("#city-form");
+cityForm.addEventListener("submit", search);
