@@ -38,6 +38,13 @@ p {
 .date {
   font-size: 30px;
 }
+.temperature{
+  position: relative;
+  bottom: -20px;
+ font-size: 38px;
+ color: gray;
+
+}
 
 .upper-section {
   display: block;
