@@ -85,3 +85,16 @@ function convertToFahrenheit(event) {
 }
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+function showWeather(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let city = response.data.name;
+  let weatherReport = `It is ${temperature}°C in ${city}`;
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = weatherReport;
+}
+let apiKey = "dd9de2db37b425827a3d32ecdc9508d4";
+let units = "metric";
+let city = "sydney";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${apiKey}`
+axios.get(apiUrl).then(showWeather);
