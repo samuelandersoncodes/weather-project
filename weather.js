@@ -86,15 +86,35 @@ function convertToFahrenheit(event) {
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-function showWeather(response) {
+// function showWeather(response) {
+//   let temperature = Math.round(response.data.main.temp);
+//   let city = response.data.name;
+//   let weatherReport = `It is ${temperature}°C in ${city}`;
+//   let h1 = document.querySelector("h1");
+//   h1.innerHTML = weatherReport;
+// }
+
+
+// let apiKey = "dd9de2db37b425827a3d32ecdc9508d4";
+// let units = "metric";
+// let city = "city";
+// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${apiKey}`
+// axios.get(apiUrl).then(showWeather);
+
+function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
-  let city = response.data.name;
-  let weatherReport = `It is ${temperature}°C in ${city}`;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = weatherReport;
+  let humidity = response.data.main.humidity;
+  let weatherReport = document.querySelector("h1");
+  weatherReport.innerHTML = `Temperature is ${temperature}°C & humidity is ${humidity}g.m*3`;
 }
-let apiKey = "dd9de2db37b425827a3d32ecdc9508d4";
-let units = "metric";
-let city = "sydney";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${apiKey}`
-axios.get(apiUrl).then(showWeather);
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let units = "metric";
+  let apiKey = "dd9de2db37b425827a3d32ecdc9508d4";
+  let city = "city";
+  let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?";
+  let apiUrl = `${apiEndPoint}q=${city}&units=${units}&appid=${apiKey}&lat=${latitude}&lon=${longitude}`;
+  axios(apiUrl).then(showTemperature);
+  }
+navigator.geolocation.getCurrentPosition(showPosition);
