@@ -77,13 +77,26 @@ function convertToFahrenheit(event) {
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-// function showWeather(response) {
-//   let temperature = Math.round(response.data.main.temp);
-//   let city = response.data.name;
-//   let weatherReport = `It is ${temperature}°C in ${city}`;
-//   let h1 = document.querySelector("h1");
-//   h1.innerHTML = weatherReport;
-// }
+function showWeather(response) {
+    // let temperature = Math.round(response.data.main.temp);
+    // let city = response.data.name;
+    // let weatherReport = `It is ${temperature}°C in ${city}`;
+    // let h1 = document.querySelector("h1");
+    // h1.innerHTML = weatherReport;
+    console.log(response);
+  }
+function search(event) {
+    let lat = "latitude";
+  let lon = "longitude";
+  let apiKey = "2494e01f1e94ad8c5106665c9c6e14ae";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`; 
+  axios.get(apiUrl).then(showWeather);
+  
+} 
+
+
+
+// 
 
 
 // let apiKey = "dd9de2db37b425827a3d32ecdc9508d4";
@@ -92,21 +105,8 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${apiKey}`
 // axios.get(apiUrl).then(showWeather);
 
-function showTemperature(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
-      
-}
-function searchElement(event) {
-  event.preventDefault();
-  let apiKey = "dd9de2db37b425827a3d32ecdc9508d4";
-  let city = document.querySelector("#city-input").value;
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-  axios(apiUrl).then(showTemperature);
-   
-}
-// navigator.geolocation.getCurrentPosition(searchElement);
+// function tellTemperature(response) {
 
-// let latitude = position.coords.latitude;
-// let longitude = position.coords.longitude;
+// }
+
+
