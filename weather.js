@@ -61,6 +61,15 @@ let time = new Date();
 let timeElement = document.querySelector("#time")
 timeElement.innerHTML = formatTime(date);
 
+function showWeather(event) {
+  
+  // let apiKey = "2494e01f1e94ad8c5106665c9c6e14ae"
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric`; 
+  // axios.get(apiUrl).then(showWeather);
+  console.log(apiUrl);
+} 
+
+
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -77,22 +86,16 @@ function convertToFahrenheit(event) {
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
-function showWeather(response) {
+// function showWeather(response) {
     // let temperature = Math.round(response.data.main.temp);
     // let city = response.data.name;
     // let weatherReport = `It is ${temperature}°C in ${city}`;
     // let h1 = document.querySelector("h1");
     // h1.innerHTML = weatherReport;
-    console.log(response);
-  }
-function search(event) {
-    let lat = "latitude";
-  let lon = "longitude";
-  let apiKey = "2494e01f1e94ad8c5106665c9c6e14ae";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`; 
-  axios.get(apiUrl).then(showWeather);
-  
-} 
+    // console.log(response);
+  // }
+
+
 
 
 
@@ -103,7 +106,7 @@ function search(event) {
 // let units = "metric";
 // let city = "city";
 // let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&APPID=${apiKey}`
-// axios.get(apiUrl).then(showWeather);
+// axios.
 
 // function tellTemperature(response) {
 
