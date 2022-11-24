@@ -7,16 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/b6d3775a16.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./weather.css">
-  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-  <title>Document</title>
+  <title>Weather Project</title>
 </head>
 
 <body>
   <div class="main">
     <div class="upper-section">
       <form id="city-form">
-        <input type="search" placeholder="type in your city" autocomplete="off" autofocus="on" id="city-input"
-          class="city-input">
+        <input type="search" placeholder="type in your city" class="city-input" id="city-input">
         <input type="submit" value="search" id="search-city">
       </form>
     </div>
@@ -32,18 +30,14 @@
     <div class="row weather-elements">
       <div class="col">
         <i class="fa-solid fa-cloud-showers-heavy"></i>
-        <div>
-          <span>
-            <span class="temperature" id="temperature">14</span>
-            <a href="#" id="celsius">°C</a> |
-            <a href="#" id="fahrenheit">°F</a>
-          </span>
-        </div>
+      </div>
+      <div class="temperature" id="temperature">
+        14 °C
       </div>
       <div>
         <ul>
           <li>
-            Precipitation:14°C
+            Precipitation:18 °C
           </li>
           <li>
             Humidity :64%
@@ -65,7 +59,9 @@
         </button>
       </div>
     </div>
-    <script src="./weather.js"></script>
+  </div>
+  <script src="./weather.js"></script>
+
 </body>
 
 </html>
