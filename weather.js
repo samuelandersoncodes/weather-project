@@ -65,10 +65,11 @@ function showWeather(response) {
   console.log(response);
 }
 function showApiElement(event) {
-  
+  event.preventDefault();
   let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric"; 
   axios.get(apiUrl).then(showWeather);
 }
+
 
 
 
