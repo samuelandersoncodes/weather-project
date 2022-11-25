@@ -70,7 +70,7 @@ let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=249
 
 // axios.get(apiUrl).then(showWeather);
 console.log(apiUrl);
-console.log(navigator.userAgentData);
+// console.log(navigator.userAgentData);
 
 
 
