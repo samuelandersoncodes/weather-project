@@ -48,11 +48,11 @@ dateElement.innerHTML = formatDate(date);
 function formatTime(date) {
   let currentHour = date.getHours();
   if (currentHour < 10) {
-    hours = `0{hours}`;
+    currentHour = `0{currentHour}`;
   }
   let currentMinute = date.getMinutes();
   if (currentMinute < 10) {
-    minutes = `0{hours}`;
+    currentMinute = `0{currentMinute}`;
   }
   return `${currentHour} : ${currentMinute} `
 }
@@ -65,13 +65,20 @@ async function getWeather() {
   let response = await 
   fetch('https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric');
   let data = await response.json();
-  return data
+  return data;
 }
 
-getWeather().then(response => {console.log(response.main.temp)});
+let temp = document.getElementById("temperature");
+getWeather().then(response => {temp.innerHTML= Math.round(response.main.temp)});
 
+let humidity = document.getElementById("humidity");
+getWeather().then(response => {humidity.innerHTML= Math.round(response.main.humidity)});
 
+let wind = document.getElementById("wind");
+getWeather().then(response => {wind.innerHTML= (response.main.humidity)});
 
+let pressure = document.getElementById("pressure");
+getWeather().then(response => {pressure.innerHTML= Math.round(response.main.pressure)});
 
 
 
