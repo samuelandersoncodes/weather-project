@@ -52,7 +52,7 @@ function formatTime(date) {
   }
   let currentMinute = date.getMinutes();
   if (currentMinute < 10) {
-    currentMinute = `0{currentMinute}`;
+    currentMinute = `0${currentMinute}`;
   }
   return `${currentHour} : ${currentMinute} `
 }
@@ -61,12 +61,23 @@ let time = new Date();
 let timeElement = document.querySelector("#time")
 timeElement.innerHTML = formatTime(date);
 
+// async function getValue(data) {
+//   const jsonData = await getWeather();
+//   // const point = response.json(); 
+//   let city = document.getElementById("city-input").value;
+//   }
+
+// getValue();
+// console.log(getValue.jsonData);
+
 async function getWeather() {
-  let response = await 
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric');
-  let data = await response.json();
-  return data;
+  const response = await 
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=city&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric`);
+  let jasonUserData = await response.json();
+  return jasonUserData;
+  getValue(jasonUserData);
 }
+
 
 let temp = document.getElementById("temperature");
 getWeather().then(response => {temp.innerHTML= Math.round(response.main.temp)});
