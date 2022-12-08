@@ -61,6 +61,22 @@ let time = new Date();
 let timeElement = document.querySelector("#time")
 timeElement.innerHTML = formatTime(date);
 
+async function getWeatherData(event) {
+  const form = document.getElementById('form');
+  const formData = new FormData(form);
+  // event.preventDefault();
+  // if (cityName === '') return;
+  let cityName = document.getElementById('city-input').value;
+  cityName.innerHTML = response.main.name;
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric`;
+  const response = await fetch(url);
+  const jason = await response.json();
+}
+let city = document.getElementById("city-input");
+getWeatherData().then(response => {form.innerHTML= (response.main.name)});
+city.addEventListener('submit', getWeatherData.value);
+
+
 async function getWeather() {
   const response = await 
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=city&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric`);
