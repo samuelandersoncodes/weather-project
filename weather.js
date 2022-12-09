@@ -61,41 +61,26 @@ let time = new Date();
 let timeElement = document.querySelector("#time")
 timeElement.innerHTML = formatTime(date);
 
-async function getWeatherData(event) {
-  const form = document.getElementById('form');
-  const formData = new FormData(form);
-  // event.preventDefault();
-  // if (cityName === '') return;
-  let cityName = document.getElementById('city-input').value;
-  cityName.innerHTML = response.main.name;
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric`;
-  const response = await fetch(url);
-  const jason = await response.json();
-}
-let city = document.getElementById("city-input");
-getWeatherData().then(response => {form.innerHTML= (response.main.name)});
-city.addEventListener('submit', getWeatherData.value);
+function displayWeather(response) {
+console.log(response.data)
+  let temp = document.getElementById("temperature");
+  let humidity = document.getElementById("humidity");
+  let wind = document.getElementById("wind");
+  let pressure = document.getElementById("pressure");
+  let dateHolder = document.getElementById("date");
 
+  temp.innerHTML = Math.round(response.data.main.temp);
+  humidity.innerHTML = Math.round(response.data.main.humidity);
+  wind.innerHTML = Math.round(response.data.wind.speed);
+  pressure.innerHTML = Math.round(response.data.main.pressure);
+  dateHolder.innerHTML = formatDate(response.data.dt * 1000);
 
-async function getWeather() {
-  const response = await 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=city&appid=2494e01f1e94ad8c5106665c9c6e14ae&units=metric`);
-  let jasonUserData = await response.json();
-  return jasonUserData;
-  getValue();
 }
 
-let temp = document.getElementById("temperature");
-getWeather().then(response => {temp.innerHTML= Math.round(response.main.temp)});
-
-let humidity = document.getElementById("humidity");
-getWeather().then(response => {humidity.innerHTML= Math.round(response.main.humidity)});
-
-let wind = document.getElementById("wind");
-getWeather().then(response => {wind.innerHTML= (response.main.humidity)});
-
-let pressure = document.getElementById("pressure");
-getWeather().then(response => {pressure.innerHTML= Math.round(response.main.pressure)});
+let city = "Berlin";
+const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+axios.get(apiUrl).then(displayWeather);
 
 
 
