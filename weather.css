@@ -98,3 +98,11 @@ button {
 button:hover {
   color: rgba(127, 80, 172, 0.767);
 }
+
+.weather-elements {
+  position: relative;
+  right: -160px;
+  top: -7px;
+  padding: 0;
+
+}
