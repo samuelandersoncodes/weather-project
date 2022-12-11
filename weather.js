@@ -48,7 +48,7 @@ dateElement.innerHTML = formatDate(date);
 function formatTime(date) {
   let currentHour = date.getHours();
   if (currentHour < 10) {
-    currentHour = `0{currentHour}`;
+    currentHour = `0${currentHour}`;
   }
   let currentMinute = date.getMinutes();
   if (currentMinute < 10) {
@@ -63,20 +63,20 @@ timeElement.innerHTML = formatTime(date);
 
 
 function displayWeather(response) {
-  let cityElement = document.getElementById("city");
+  let city = document.querySelector("#city");
   let temp = document.getElementById("temperature");
   let humidity = document.getElementById("humidity");
   let wind = document.getElementById("wind");
   let pressure = document.getElementById("pressure");
   let description = document.getElementById("description");
   // let dateHolder = document.getElementById("date");
-  
-  cityElement.innerHTML = response.data.name;
+
+  city.innerHTML = response.data.name;
   temp.innerHTML = Math.round(response.data.main.temp);
   humidity.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
   pressure.innerHTML = Math.round(response.data.main.pressure);
-  description.innerHTML = (response.data.weather[0].description);
+  description.innerHTML = response.data.weather[0].description;
   // dateHolder.innerHTML = formatDate(response.data.dt * 1000);
 }
 
@@ -88,15 +88,14 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInput = document.getElementById("city-input");
+  let cityInput = document.querySelector("#city-input");
   search(cityInput.value);
+  
 }
-let cityInput = document.getElementById("city-input");
-console.log(cityInput.value.search())
 
-search("Berlin");
-let form = document.getElementById("form");
-form.addEventListener("sumbit", handleSubmit);
+search('Berlin');
+let form = document.querySelector("#form");
+form.addEventListener("submit", handleSubmit);
 
 
 
