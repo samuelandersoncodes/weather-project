@@ -29,20 +29,24 @@ h3 {
   font-size: 55px;
 }
 
-p {
+.description{
   color: rgb(135, 135, 135);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 25px;
+  padding-top: 0;
 }
 
 .date {
-  font-size: 30px;
+  font-size: 34px;
+  color: rgb(135, 135, 135);
+  margin-bottom: 0;
+  padding-bottom: 15px;
 }
 
 .temperature {
   position: relative;
-  bottom: -20px;
-  font-size: 38px;
+  bottom: -15px;
+  font-size: 40px;
   color: gray;
 
 }
@@ -62,47 +66,25 @@ p {
   box-shadow: none;
 }
 
-.fa-cloud-showers-heavy {
-  color: rgba(169, 169, 169, 0.411);
-  font-size: 70px;
-}
-
 .weather-elements {
   position: relative;
-  top: -40px;
-  right: -190px;
-
+  right: -160px;
+  top: -7px;
+  padding: 0;
+ 
 }
 
 .weather-elements ul li {
   list-style: none;
 }
 
-.mother-button {
-
-  position: relative;
-  top: -2px;
-  right: -25px;
-  margin: 0 auto;
+.pressure{
+  color: rgba(96, 75, 155, 0.623);
 }
 
-.mother-button,
-button {
-  display: inline-flex;
-  margin: 0 auto;
-  padding: 0 auto;
-  color: rgba(135, 135, 135, 0.76);
-  font-weight: bold;
+.humidity{
+  color:rgba(156, 70, 84, 0.767);
 }
-
-button:hover {
-  color: rgba(127, 80, 172, 0.767);
-}
-
-.weather-elements {
-  position: relative;
-  right: -160px;
-  top: -7px;
-  padding: 0;
-
+.wind{
+  color: green;
 }

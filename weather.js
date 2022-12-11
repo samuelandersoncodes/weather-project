@@ -32,7 +32,6 @@ function formatDate(date) {
 
   let formattedDate =
     `
-    Today is 
     ${currentDay} 
     ${currentMonth}
     ${currentDate},
@@ -63,12 +62,13 @@ timeElement.innerHTML = formatTime(date);
 
 
 function displayWeather(response) {
-  let city = document.querySelector("#city");
+  let city = document.getElementById("city");
   let temp = document.getElementById("temperature");
   let humidity = document.getElementById("humidity");
   let wind = document.getElementById("wind");
   let pressure = document.getElementById("pressure");
   let description = document.getElementById("description");
+  let iconElement = document.getElementById("icon");
   // let dateHolder = document.getElementById("date");
 
   city.innerHTML = response.data.name;
@@ -77,7 +77,12 @@ function displayWeather(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
   pressure.innerHTML = Math.round(response.data.main.pressure);
   description.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   // dateHolder.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
@@ -88,13 +93,13 @@ function search(city) {
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
+  let cityInput = document.getElementById("city-input");
   search(cityInput.value);
-  
+
 }
 
 search('Berlin');
-let form = document.querySelector("#form");
+let form = document.getElementById("form");
 form.addEventListener("submit", handleSubmit);
 
 
