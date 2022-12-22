@@ -5,38 +5,44 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="weather">
+  <meta name="keywords" content="weather, weather-elements, humidity, wind-speed, temperature" <meta name="author"
+    content="Samuel Anderson">
   <script src="https://kit.fontawesome.com/b6d3775a16.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./weather.css">
   <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <link rel="data" href="icon">
   <title>Weather Project</title>
-
 </head>
 
 <body>
   <div class="main">
-    <div class="upper-section">
+    <section class="upper-section">
       <form id="form">
         <input type="search" placeholder="type a city" class="city-input" id="city-input">
         <input type="submit" value="search">
       </form>
-    </div>
-    <h1 id="city">Berlin</h1>
-    <h3 id="time">Time</h3>
-    <p class="date" id="date">
-      Sunday November 13
-    </p>
-    <p class="description" id="description">
-      Cloudy
-    </p>
-
-    <div class="row weather-elements">
-      <div class="col">
-        <img src="" alt="condition" id="icon" class="float-left">
-      </div>
-      <div class="temperature">
-        <span id="temperature"></span> °C
-      </div>
+    </section>
+    <header>
+      <h1 id="city">Berlin</h1>
+      <h2 id="time">Time</h2>
+      <p class="date" id="date">
+        Sunday November 13
+      </p>
+      <p class="description" id="description">
+        Cloudy
+      </p>
+    </header>
+    <section>
+      <div class="row weather-elements">
+        <div class="col">
+          <img src="" alt="condition" id="icon" class="float-left">
+        </div>
+        <div class="temperature">
+          <span id="temperature"></span> °C
+        </div>
+    </section>
+    <section>
       <div class="weather-elements">
         <ul>
           <li>
@@ -53,10 +59,14 @@
           </li>
         </ul>
       </div>
-    </div>
+    </section>
+    <footer>
+      <a href="#" aria-label="the author (just the name of the author)" rel="noopener">
+        designed by Samuel Anderson
+      </a>
+    </footer>
   </div>
   <script src="./weather.js"></script>
-
 </body>
 
 </html>
